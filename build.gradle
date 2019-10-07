@@ -7,22 +7,22 @@ plugins {
 repositories {
     maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    maven { url "https://jitpack.io" }
     mavenLocal()
     mavenCentral()
 }
 
 dependencies {
-// Choose one of this
-    implementation "org.spigotmc:spigot-api:1.8.9-R0.1-SNAPSHOT"
-    implementation "org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT"
-    implementation "org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT"
-    implementation "org.spigotmc:spigot-api:1.14.4-R0.1-SNAPSHOT"
-    
+// Choose your Version:
+    implementation "org.spigotmc:spigot:1.8.9-R0.1-SNAPSHOT"
+    implementation "org.spigotmc:spigot:1.12.2-R0.1-SNAPSHOT"
+    implementation "org.spigotmc:spigot:1.13.2-R0.1-SNAPSHOT"
+    implementation "org.spigotmc:spigot:1.14.4-R0.1-SNAPSHOT"
 }
 
 shadowJar {
     baseName = 'ItemderLib'
-    destinationDirectory = file(ExportPath)
+    destinationDirectory = file("ExportPath")
     classifier = null
     version = null
 }
