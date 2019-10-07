@@ -1,0 +1,30 @@
+
+plugins {
+    id 'java-library'
+    id 'com.github.johnrengelman.shadow' version '5.1.0'
+}
+
+repositories {
+    maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+// Choose one of this
+    implementation "org.spigotmc:spigot-api:1.8.9-R0.1-SNAPSHOT"
+    implementation "org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT"
+    implementation "org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT"
+    implementation "org.spigotmc:spigot-api:1.14.4-R0.1-SNAPSHOT"
+    
+}
+
+shadowJar {
+    baseName = 'ItemderLib'
+    destinationDirectory = file(ExportPath)
+    classifier = null
+    version = null
+}
+
+compileJava.options.encoding = "UTF-8"
